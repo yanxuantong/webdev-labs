@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
 body * {
     box-sizing: border-box;
 }
@@ -10,15 +12,46 @@ body {
 Add some style blocks below this line to style the cards.
 Feel free to borrow from Exercise 1.
 */
+main {
+    display: flex;
+}
 
+section {
+    width: 400px;
+    border: solid 1px #e1e6e2;
+    padding-bottom: 10px;
+    margin: 10px;
+}
+
+img {
+    width: 100%;
+    height: 250px;
+}
+
+h2, p {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+h2, p, button {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+iframe {
+    width: 100%;
+    height: 250px;
+}
 
 /* Tablet Media Query */
 @media only screen and (max-width: 1000px) {
-
+    main {
+        flex-wrap: wrap;
+    }
 }
 
 /* Mobile Phone Media Query */
 @media only screen and (max-width: 600px) {
-
-    
+    main {
+        flex-wrap: wrap;
+    }
 }
