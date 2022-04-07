@@ -80,13 +80,13 @@ def exercise4():
     url = 'https://www.apitutor.org/yelp/simple/v3/businesses/search?location={0}&term={1}'.format(location, search_term)
     response = requests.get(url)
     restaurants = response.json()
-    pprint(restaurants[0]) # for debugging
+    #pprint(restaurants[0]) # for debugging
     return render_template(
         'restaurant.html',
         user=current_user,
         search_term=search_term,
         location=location,
-        restaurant=restaurants[0] # just show the first restaurant in the list.
+        restaurants=restaurants
     )
 
 
@@ -100,8 +100,14 @@ def photos_static():
     if not (location and search_term):
         return '"location" and "term" are required query parameters'
     
-    
-    return render_template('cards.html')
-
-
-    
+    url = 'https://www.apitutor.org/yelp/simple/v3/businesses/search?location={0}&term={1}'.format(location, search_term)
+    response = requests.get(url)
+    restaurants = response.json()
+    #pprint(restaurants[0]) # for debugging
+    return render_template(
+        'restaurant.html',
+        user=current_user,
+        search_term=search_term,
+        location=location,
+        restaurants=restaurants
+    )

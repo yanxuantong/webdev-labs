@@ -9,20 +9,23 @@
 </head>
 <body>
     {% include 'includes/header.html' %}
-
-    <section>
-        <h2>{{ restaurant.get('name') }}</h2>
-        <img src="{{restaurant.get('image_url')}}" alt="restaurant graph">
-        <p><b>{{restaurant.get('display_address')}}</b></p>
-        <hr style="FILTER: alpha(opacity=100,finishopacity=0,style=3)" width="92%" color="white" size="1">
-        <p>Price:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><b>{{restaurant.get('price')}}</b></span></p>
-        <hr style="FILTER: alpha(opacity=100,finishopacity=0,style=3)" width="92%" color="lightgray" size="1">
-        <p>Rating:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><b>{{restaurant.get('rating')}}</b></span></p>
-        <hr style="FILTER: alpha(opacity=100,finishopacity=0,style=3)" width="92%" color="lightgray" size="1">
-        <p>Reviews:&nbsp;&nbsp;<span><b>{{restaurant.get('review_count')}}</b></span></p>
-        <hr style="FILTER: alpha(opacity=100,finishopacity=0,style=3)" width="92%" color="lightgray" size="1">
-    </section>
-
+    <main>
+        {% for restaurant in restaurants %}
+        <section>
+            <h2>{{ restaurant.get('name') }}</h2>
+            <img src="{{restaurant.get('image_url')}}" alt="restaurant graph">
+            <p><b>{{restaurant.get('display_address')}}</b></p>
+            <hr style="FILTER: alpha(opacity=100,finishopacity=0,style=3)" width="92%" color="white" size="1">
+            <p>Price:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><b>{{restaurant.get('price')}}</b></span></p>
+            <hr style="FILTER: alpha(opacity=100,finishopacity=0,style=3)" width="92%" color="lightgray" size="1">
+            <p>Rating:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><b>{{restaurant.get('rating')}}</b></span></p>
+            <hr style="FILTER: alpha(opacity=100,finishopacity=0,style=3)" width="92%" color="lightgray" size="1">
+            <p>Reviews:&nbsp;&nbsp;<span><b>{{restaurant.get('review_count')}}</b></span></p>
+            <hr style="FILTER: alpha(opacity=100,finishopacity=0,style=3)" width="92%" color="lightgray" size="1">
+        </section>
+        {% endfor %}
+    </main>
+    
 </body>
 </html>
 
